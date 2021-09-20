@@ -52,6 +52,7 @@ public class ClientesControlador {
             return ResponseEntity.ok(clienteDB);
         }
     }
+
     @DeleteMapping("/eliminar/{cedula_cliente}")
     public void eliminarCliente (@PathVariable ("cedula_cliente") Double cedula_cliente){
         clientesServicios.eliminarClientes(cedula_cliente);
