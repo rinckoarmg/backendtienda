@@ -3,9 +3,11 @@ package com.backend.tienda.servicios;
 import com.backend.tienda.entidades.Ventas;
 import com.backend.tienda.repository.VentasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class VentasServiciosImp implements VentasServicios{
 
     @Autowired
@@ -29,8 +31,8 @@ public class VentasServiciosImp implements VentasServicios{
     }
 
     @Override
-    public void eliminarVentas(Double cedula_cliente) {
-        ventasRepository.deleteById(cedula_cliente);
+    public void eliminarVentas(Double codigo_venta) {
+        ventasRepository.deleteById(codigo_venta);
     }
 
     @Override
@@ -45,8 +47,8 @@ public class VentasServiciosImp implements VentasServicios{
     }
 
     @Override
-    public Ventas buscarVenta(Double cedula_cliente) {
-        ventasRepository.findById(cedula_cliente).orElse(null);
+    public Ventas buscarVenta(Double codigo_venta) {
+        ventasRepository.findById(codigo_venta).orElse(null);
         return null;
     }
 }

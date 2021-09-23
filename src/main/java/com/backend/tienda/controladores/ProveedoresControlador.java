@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/proveedores")
 public class ProveedoresControlador {
 
     @Autowired
@@ -40,7 +42,7 @@ public class ProveedoresControlador {
             return ResponseEntity.status(HttpStatus.CREATED).body(nuevo_proveedor);
     }
 
-    @PutMapping("/actualiar/{nitproveedor}")
+    @PutMapping("/actualizar/{nitproveedor}")
     public ResponseEntity<Proveedores> actualizarProveedores(@PathVariable("nitproveedores") Double nitproveedor, @RequestBody Proveedores proveedores){
         proveedores.setNitproveedor(nitproveedor);
         Proveedores proveedorBD = proveedoresServicios.actualizarProveedores(proveedores);

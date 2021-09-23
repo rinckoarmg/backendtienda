@@ -4,9 +4,11 @@ import com.backend.tienda.entidades.Proveedores;
 import com.backend.tienda.repository.ProductosRepository;
 import com.backend.tienda.repository.ProveedoresRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProveedoresServiciosImp implements ProveedoresServicios{
 
     @Autowired

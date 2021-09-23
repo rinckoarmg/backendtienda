@@ -1,7 +1,6 @@
 package com.backend.tienda.servicios;
 
 import com.backend.tienda.entidades.Usuarios;
-
 import java.util.List;
 
 public interface UsuariosServicios {

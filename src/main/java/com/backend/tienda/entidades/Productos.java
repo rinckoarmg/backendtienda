@@ -1,7 +1,6 @@
 package com.backend.tienda.entidades;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,7 +21,7 @@ public class Productos {
 
     private Double ivacompra;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "nitproveedor")
     private Proveedores nitproveedor;
 

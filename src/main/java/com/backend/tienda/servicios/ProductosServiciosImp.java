@@ -3,9 +3,11 @@ package com.backend.tienda.servicios;
 import com.backend.tienda.entidades.Productos;
 import com.backend.tienda.repository.ProductosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductosServiciosImp implements ProductosServicios{
 
     @Autowired
