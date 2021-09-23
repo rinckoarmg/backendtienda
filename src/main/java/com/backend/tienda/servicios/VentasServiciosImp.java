@@ -31,7 +31,7 @@ public class VentasServiciosImp implements VentasServicios{
     }
 
     @Override
-    public void eliminarVentas(Double codigo_venta) {
+    public void eliminarVentas(Long codigo_venta) {
         ventasRepository.deleteById(codigo_venta);
     }
 
@@ -47,7 +47,7 @@ public class VentasServiciosImp implements VentasServicios{
     }
 
     @Override
-    public Ventas buscarVenta(Double codigo_venta) {
+    public Ventas buscarVenta(Long codigo_venta) {
         ventasRepository.findById(codigo_venta).orElse(null);
         return null;
     }

@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface ClientesServicios {
     public Clientes actualizarClientes(Clientes clientes);
-    public void eliminarClientes(Double cedula_cliente);
+    public void eliminarClientes(Long cedula_cliente);
     public Clientes guardarClientes(Clientes clientes);
     public List<Clientes> listarClientes();
-    public Clientes buscarClientes(Double cedula_cliente);
+    public Clientes buscarClientes(Long cedula_cliente);
 }

@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 
 public class Clientes {
     @Id
-    private Double cedula_cliente;
+    private Long cedula_cliente;
 
     private String direccion_cliente;
     private String email_cliente;

@@ -30,7 +30,7 @@ public class UsuariosServiciosImp implements UsuariosServicios{
     }
 
     @Override
-    public void eliminarUsuarios(Double cedula_usuario) {
+    public void eliminarUsuarios(Long cedula_usuario) {
         usuariosRepository.deleteById(cedula_usuario);
     }
 
@@ -46,7 +46,7 @@ public class UsuariosServiciosImp implements UsuariosServicios{
     }
 
     @Override
-    public Usuarios buscarUsuario(Double cedula_usuario) {
+    public Usuarios buscarUsuario(Long cedula_usuario) {
         return usuariosRepository.findById(cedula_usuario).orElse(null);
     }
 }

@@ -27,7 +27,7 @@ public class ProveedoresControlador {
     }
 
     @GetMapping("/{nitproveedor}")
-    public ResponseEntity<Proveedores> buscarProveedor(@PathVariable("nitproveedor") Double nitproveedor){
+    public ResponseEntity<Proveedores> buscarProveedor(@PathVariable("nitproveedor") Long nitproveedor){
         Proveedores proveedores = proveedoresServicios.buscarProveedor(nitproveedor);
         if (proveedores == null){
             return ResponseEntity.notFound().build();
@@ -43,7 +43,7 @@ public class ProveedoresControlador {
     }
 
     @PutMapping("/actualizar/{nitproveedor}")
-    public ResponseEntity<Proveedores> actualizarProveedores(@PathVariable("nitproveedores") Double nitproveedor, @RequestBody Proveedores proveedores){
+    public ResponseEntity<Proveedores> actualizarProveedores(@PathVariable("nitproveedores") Long nitproveedor, @RequestBody Proveedores proveedores){
         proveedores.setNitproveedor(nitproveedor);
         Proveedores proveedorBD = proveedoresServicios.actualizarProveedores(proveedores);
         if (proveedorBD == null){
@@ -54,7 +54,7 @@ public class ProveedoresControlador {
     }
 
     @DeleteMapping("/eliminar/{nitproveedor}")
-    public void eliminarProveedor (@PathVariable("nitproveedor") Double nitproveedor){
+    public void eliminarProveedor (@PathVariable("nitproveedor") Long nitproveedor){
         proveedoresServicios.eliminarProveedores(nitproveedor);
     }
 }

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class Proveedores {
     @Id
-    private Double nitproveedor;
+    private Long nitproveedor;
 
     private String ciudad_proveedor;
     private String direccion_proveedor;
