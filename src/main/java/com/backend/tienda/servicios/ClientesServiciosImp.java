@@ -30,7 +30,7 @@ public class ClientesServiciosImp implements ClientesServicios {
     }
 
     @Override
-    public void eliminarClientes(Long cedula_cliente) {
+    public void eliminarClientes(Double cedula_cliente) {
         clientesRepository.deleteById(cedula_cliente);
     }
 
@@ -46,7 +46,7 @@ public class ClientesServiciosImp implements ClientesServicios {
     }
 
     @Override
-    public Clientes buscarClientes(Long cedula_cliente) {
+    public Clientes buscarClientes(Double cedula_cliente) {
         return clientesRepository.findById(cedula_cliente).orElse(null);
     }
 }

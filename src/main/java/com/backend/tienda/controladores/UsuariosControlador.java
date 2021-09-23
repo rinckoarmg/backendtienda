@@ -27,7 +27,7 @@ public class UsuariosControlador {
     }
 
     @GetMapping("/{cedula_usuario}")
-    public ResponseEntity<Usuarios> buscarUsuario(@PathVariable("cedula_usuario") Long cedula_usuario){
+    public ResponseEntity<Usuarios> buscarUsuario(@PathVariable("cedula_usuario") Double cedula_usuario){
         Usuarios usuarios = usuariosServicios.buscarUsuario(cedula_usuario);
         if (usuarios == null){
             return ResponseEntity.notFound().build();
@@ -43,7 +43,7 @@ public class UsuariosControlador {
     }
 
     @PutMapping("/actualizar/{cedula_usuario}")
-    public ResponseEntity<Usuarios> actualizarUsuarios(@PathVariable("cedula_usuario") Long cedula_usuario, @RequestBody Usuarios usuarios){
+    public ResponseEntity<Usuarios> actualizarUsuarios(@PathVariable("cedula_usuario") Double cedula_usuario, @RequestBody Usuarios usuarios){
         usuarios.setCedula_usuario(cedula_usuario);
         Usuarios usuarioBD = usuariosServicios.actualizarUsuarios(usuarios);
         if (usuarioBD == null){
@@ -54,7 +54,7 @@ public class UsuariosControlador {
     }
 
     @DeleteMapping("/eliminar/{cedula_usuario}")
-    public void eliminarUsuario (@PathVariable("cedula_usuario") Long cedula_usuario){
+    public void eliminarUsuario (@PathVariable("cedula_usuario") Double cedula_usuario){
         usuariosServicios.eliminarUsuarios(cedula_usuario);
     }
 }

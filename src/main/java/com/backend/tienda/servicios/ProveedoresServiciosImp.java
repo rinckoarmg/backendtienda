@@ -31,7 +31,7 @@ public class ProveedoresServiciosImp implements ProveedoresServicios{
     }
 
     @Override
-    public void eliminarProveedores(Long nitproveedor) {
+    public void eliminarProveedores(Double nitproveedor) {
         proveedoresRepository.deleteById(nitproveedor);
     }
 
@@ -47,7 +47,7 @@ public class ProveedoresServiciosImp implements ProveedoresServicios{
     }
 
     @Override
-    public Proveedores buscarProveedor(Long nitproveedor) {
+    public Proveedores buscarProveedor(Double nitproveedor) {
         return proveedoresRepository.findById(nitproveedor).orElse(null);
     }
 }

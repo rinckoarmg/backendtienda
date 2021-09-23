@@ -32,7 +32,7 @@ public class DetalleVentasServiciosImp implements DetalleVentasServicios {
     }
 
     @Override
-    public void eliminarDetalleVentas(Long codigo_detalle_venta) {
+    public void eliminarDetalleVentas(Double codigo_detalle_venta) {
         detalleVentasRepository.deleteById(codigo_detalle_venta);
     }
 
@@ -48,7 +48,7 @@ public class DetalleVentasServiciosImp implements DetalleVentasServicios {
     }
 
     @Override
-    public DetalleVentas buscarDetalleVenta(Long codigo_detalle_venta) {
+    public DetalleVentas buscarDetalleVenta(Double codigo_detalle_venta) {
         return detalleVentasRepository.findById(codigo_detalle_venta).orElse(null);
     }
 }

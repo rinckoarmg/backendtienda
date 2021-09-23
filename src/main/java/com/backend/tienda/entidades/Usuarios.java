@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class Usuarios {
     @Id
-    private Long cedula_usuario;
+    private Double cedula_usuario;
 
     private String email_usuario;
     private String nombre_usuario;

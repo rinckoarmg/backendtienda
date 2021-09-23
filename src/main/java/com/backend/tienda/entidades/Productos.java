@@ -17,15 +17,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class Productos {
     @Id
-    private Long codigo_producto;
+    private Double codigo_producto;
 
-    private Long ivacompra;
+    private Double ivacompra;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "nitproveedor")
     private Proveedores nitproveedor;
 
     private String nombre_producto;
-    private Long precio_compra;
-    private Long precio_venta;
+    private Double precio_compra;
+    private Double precio_venta;
 }

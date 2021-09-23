@@ -32,7 +32,7 @@ public class ProductosServiciosImp implements ProductosServicios{
     }
 
     @Override
-    public void eliminarProductos(Long codigo_producto) {
+    public void eliminarProductos(Double codigo_producto) {
         productosRepository.deleteById(codigo_producto);
     }
 
@@ -48,7 +48,7 @@ public class ProductosServiciosImp implements ProductosServicios{
     }
 
     @Override
-    public Productos buscarProducto(Long codigo_producto) {
+    public Productos buscarProducto(Double codigo_producto) {
         return productosRepository.findById(codigo_producto).orElse(null);
     }
 }

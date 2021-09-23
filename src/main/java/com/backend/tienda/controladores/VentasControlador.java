@@ -27,7 +27,7 @@ public class VentasControlador {
     }
 
     @GetMapping("/{codigo_venta}")
-    public ResponseEntity<Ventas> buscarVenta(@PathVariable("codigo_venta") Long codigo_venta){
+    public ResponseEntity<Ventas> buscarVenta(@PathVariable("codigo_venta") Double codigo_venta){
         Ventas ventas = ventasServicios.buscarVenta(codigo_venta);
         if (ventas == null){
             return ResponseEntity.notFound().build();
@@ -43,7 +43,7 @@ public class VentasControlador {
     }
 
     @PutMapping("/actualizar/{codigo_venta}")
-    public ResponseEntity<Ventas> actualizarVentas(@PathVariable("codigo_venta") Long codigo_venta, @RequestBody Ventas ventas){
+    public ResponseEntity<Ventas> actualizarVentas(@PathVariable("codigo_venta") Double codigo_venta, @RequestBody Ventas ventas){
         ventas.setCodigo_venta(codigo_venta);
         Ventas ventaBD = ventasServicios.actualizarVentas(ventas);
         if (ventaBD == null){
@@ -53,7 +53,7 @@ public class VentasControlador {
         }
     }
 
-    public void eliminarVenta (@PathVariable("codigo_venta") Long codigo_venta){
+    public void eliminarVenta (@PathVariable("codigo_venta") Double codigo_venta){
         ventasServicios.eliminarVentas(codigo_venta);
     }
 }

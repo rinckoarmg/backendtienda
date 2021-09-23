@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 
 public class DetalleVentas {
     @Id
-    private Long codigo_detalle_venta;
+    private Double codigo_detalle_venta;
 
     private int cantidad_producto;
 
@@ -30,7 +30,7 @@ public class DetalleVentas {
     @JoinColumn(name = "codigo_venta")
     private Ventas codigo_venta;
 
-    private Long valor_total;
-    private Long valor_venta;
-    private Long valoriva;
+    private double valor_total;
+    private double valor_venta;
+    private double valoriva;
 }

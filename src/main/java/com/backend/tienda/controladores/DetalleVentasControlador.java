@@ -29,7 +29,7 @@ public class DetalleVentasControlador {
     }
 
     @GetMapping("/{codigo_detalle_venta}")
-    public ResponseEntity<DetalleVentas> buscarDetalleVenta(@PathVariable("codigo_detalle_venta") Long codigo_detalle_venta){
+    public ResponseEntity<DetalleVentas> buscarDetalleVenta(@PathVariable("codigo_detalle_venta") Double codigo_detalle_venta){
         DetalleVentas detalle = detalleVentasServicios.buscarDetalleVenta(codigo_detalle_venta);
         if (detalle == null){
             return ResponseEntity.notFound().build();
@@ -45,7 +45,7 @@ public class DetalleVentasControlador {
     }
 
     @PutMapping("/actualizar/{codigo_detalle_venta}")
-    public ResponseEntity<DetalleVentas> actualizarDetalleVentas(@PathVariable("codigo_detalle_venta") Long codigo_detalle_venta, @RequestBody DetalleVentas detalleVentas){
+    public ResponseEntity<DetalleVentas> actualizarDetalleVentas(@PathVariable("codigo_detalle_venta") Double codigo_detalle_venta, @RequestBody DetalleVentas detalleVentas){
         detalleVentas.setCodigo_detalle_venta(codigo_detalle_venta);
         DetalleVentas detalleVentasDB = detalleVentasServicios.actualizarDetalleVentas(detalleVentas);
         if (detalleVentasDB == null){
@@ -56,7 +56,7 @@ public class DetalleVentasControlador {
     }
 
     @DeleteMapping("/eliminar/{codigo_detalle_venta}")
-    public void eliminarDetalleVentas (@PathVariable ("codigo_detalle_venta") Long codigo_detalle_venta){
+    public void eliminarDetalleVentas (@PathVariable ("codigo_detalle_venta") Double codigo_detalle_venta){
         detalleVentasServicios.eliminarDetalleVentas(codigo_detalle_venta);
     }
 }

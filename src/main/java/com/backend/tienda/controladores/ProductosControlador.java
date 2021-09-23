@@ -27,7 +27,7 @@ public class ProductosControlador {
     }
 
     @GetMapping("/{codigo_producto}")
-    public ResponseEntity<Productos> buscarProductos(@PathVariable("codigo_producto") Long codigo_producto) {
+    public ResponseEntity<Productos> buscarProductos(@PathVariable("codigo_producto") Double codigo_producto) {
         Productos productos = productosServicios.buscarProducto(codigo_producto);
         if (productos == null){
             return ResponseEntity.notFound().build();
@@ -43,7 +43,7 @@ public class ProductosControlador {
     }
 
     @PutMapping("/actualizar/{codigo_producto}")
-    public ResponseEntity<Productos> actualizarProductos(@PathVariable("codigo_producto") Long codigo_producto, @RequestBody Productos productos){
+    public ResponseEntity<Productos> actualizarProductos(@PathVariable("codigo_producto") Double codigo_producto, @RequestBody Productos productos){
         productos.setCodigo_producto(codigo_producto);
         Productos productoDB = productosServicios.actualizarProductos(productos);
         if (productoDB == null){
@@ -54,7 +54,7 @@ public class ProductosControlador {
     }
 
     @DeleteMapping("/eliminar/{codigo_producto}")
-    public void eliminarProducto (@PathVariable("codigo_producto") Long codigo_producto){
+    public void eliminarProducto (@PathVariable("codigo_producto") Double codigo_producto){
         productosServicios.eliminarProductos(codigo_producto);
     }
 }
