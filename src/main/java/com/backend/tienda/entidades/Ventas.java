@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class Ventas {
     @Id
-    private Double codigo_venta;
+    private Long codigo_venta;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "cedula_cliente")
@@ -27,7 +27,7 @@ public class Ventas {
     @JoinColumn(name = "cedula_usuario")
     private Usuarios cedula_usuario;
 
-    private Double ivaventa;
-    private Double total_venta;
-    private Double valor_venta;
+    private Long ivaventa;
+    private Long total_venta;
+    private Long valor_venta;
 }

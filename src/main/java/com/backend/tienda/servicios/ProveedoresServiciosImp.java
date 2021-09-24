@@ -1,7 +1,6 @@
 package com.backend.tienda.servicios;
 
 import com.backend.tienda.entidades.Proveedores;
-import com.backend.tienda.repository.ProductosRepository;
 import com.backend.tienda.repository.ProveedoresRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +30,7 @@ public class ProveedoresServiciosImp implements ProveedoresServicios{
     }
 
     @Override
-    public void eliminarProveedores(Double nitproveedor) {
+    public void eliminarProveedores(Long nitproveedor) {
         proveedoresRepository.deleteById(nitproveedor);
     }
 
@@ -47,7 +46,7 @@ public class ProveedoresServiciosImp implements ProveedoresServicios{
     }
 
     @Override
-    public Proveedores buscarProveedor(Double nitproveedor) {
+    public Proveedores buscarProveedor(Long nitproveedor) {
         return proveedoresRepository.findById(nitproveedor).orElse(null);
     }
 }

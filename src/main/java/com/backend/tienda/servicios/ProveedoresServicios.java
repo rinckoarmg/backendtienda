@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface ProveedoresServicios {
     public Proveedores actualizarProveedores(Proveedores proveedores);
-    public void eliminarProveedores(Double nitproveedor);
+    public void eliminarProveedores(Long nitproveedor);
     public Proveedores guardarProveedores(Proveedores proveedores);
     public List<Proveedores> listarProveedores();
-    public Proveedores buscarProveedor(Double nitproveedor);
+    public Proveedores buscarProveedor(Long nitproveedor);
 }
