@@ -30,8 +30,9 @@ public class UsuariosServiciosImp implements UsuariosServicios{
     }
 
     @Override
-    public void eliminarUsuarios(Long cedula_usuario) {
+    public String eliminarUsuarios(Long cedula_usuario) {
         usuariosRepository.deleteById(cedula_usuario);
+        return "usuario eliminado";
     }
 
     @Override

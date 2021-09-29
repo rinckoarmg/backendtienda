@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins ="http://127.0.0.1:5500")
 @RestController
 @RequestMapping("/usuarios")
 public class UsuariosControlador {
@@ -54,7 +55,13 @@ public class UsuariosControlador {
     }
 
     @DeleteMapping("/eliminar/{cedula_usuario}")
-    public void eliminarUsuario (@PathVariable("cedula_usuario") Long cedula_usuario){
-        usuariosServicios.eliminarUsuarios(cedula_usuario);
+    public ResponseEntity<String> eliminarUsuario (@PathVariable("cedula_usuario") Long cedula_usuario){
+        String eliminado = usuariosServicios.eliminarUsuarios(cedula_usuario);
+        if (eliminado != null){
+            return ResponseEntity.status(HttpStatus.OK).body("eliminado");
+        } else {
+            return ResponseEntity.status((HttpStatus.BAD_REQUEST)).body("No se pudo eliminar");
+        }
+
     }
 }
