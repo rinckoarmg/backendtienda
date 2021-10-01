@@ -27,7 +27,7 @@ public class Ventas {
     @JoinColumn(name = "cedula_usuario")
     private Usuarios cedula_usuario;
 
-    private Long ivaventa;
-    private Long total_venta;
-    private Long valor_venta;
+    private Double ivaventa;
+    private Double total_venta;
+    private Double valor_venta;
 }

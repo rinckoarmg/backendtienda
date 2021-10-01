@@ -30,7 +30,7 @@ public class DetalleVentas {
     @JoinColumn(name = "codigo_venta")
     private Ventas codigo_venta;
 
-    private Long valor_total;
-    private Long valor_venta;
-    private Long valoriva;
+    private Double valor_total;
+    private Double valor_venta;
+    private Double valoriva;
 }
