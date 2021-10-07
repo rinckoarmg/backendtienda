@@ -37,6 +37,15 @@ public class UsuariosControlador {
         }
     }
 
+    @GetMapping("/login/{usuario}/{password}")
+    public ResponseEntity<Usuarios> login(@PathVariable String usuario, @PathVariable String password){
+        Usuarios usuarios =usuariosServicios.login(usuario,password);
+        if(usuarios==null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(usuarios);
+    }
+
     @PostMapping("/guardar")
     public ResponseEntity<Usuarios> guardarUsuario(@RequestBody Usuarios usuarios){
         Usuarios nuevo_usuario = usuariosServicios.guardarUsuarios(usuarios);

@@ -10,4 +10,5 @@ public interface VentasServicios {
     public Ventas guardarVentas(Ventas ventas);
     public List<Ventas> listarVentas();
     public Ventas buscarVenta(Long codigo_venta);
+    public Ventas buscarXCliente(String cedula_cliente);
 }

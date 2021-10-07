@@ -37,6 +37,12 @@ public class VentasControlador {
         }
     }
 
+    @GetMapping("/buscar/{cedula_cliente}")
+    public ResponseEntity<Ventas> buscarXCliente(@PathVariable("cedula_cliente") String cedula_cliente){
+        Ventas ventas = ventasServicios.buscarXCliente(cedula_cliente);
+            return ResponseEntity.ok(ventas);
+    }
+
     @PostMapping("/guardar")
     public ResponseEntity<Ventas> guardarVenta(@RequestBody Ventas ventas){
         Ventas nueva_venta = ventasServicios.guardarVentas(ventas);

@@ -50,4 +50,9 @@ public class UsuariosServiciosImp implements UsuariosServicios{
     public Usuarios buscarUsuario(Long cedula_usuario) {
         return usuariosRepository.findById(cedula_usuario).orElse(null);
     }
+
+    @Override
+    public Usuarios login(String usuario, String password) {
+        return usuariosRepository.findByUserPassword(usuario,password);
+    }
 }

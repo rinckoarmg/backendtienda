@@ -51,4 +51,9 @@ public class VentasServiciosImp implements VentasServicios{
         ventasRepository.findById(codigo_venta).orElse(null);
         return null;
     }
+
+    @Override
+    public Ventas buscarXCliente(String cedula_cliente) {
+        return ventasRepository.findByClient(cedula_cliente);
+    }
 }
