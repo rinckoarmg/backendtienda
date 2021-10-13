@@ -1,10 +1,6 @@
 package com.backend.tienda.entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +14,7 @@ import lombok.NoArgsConstructor;
 
 public class DetalleVentas {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo_detalle_venta;
 
     private int cantidad_producto;
